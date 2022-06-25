@@ -40,7 +40,7 @@ class _ArtAppState extends State<ArtApp> {
             onPressed: () {},
             icon: const Icon(
               Icons.menu_outlined,
-              color: Color.fromARGB(255, 240, 240, 240),
+              color: Colors.black,
               size: 30,
             ),
           ),
@@ -50,7 +50,7 @@ class _ArtAppState extends State<ArtApp> {
         scrollDirection: Axis.vertical,
         children: [
           Container(
-            margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+            margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
             child: Image.asset(
               'assets/main_image.png',
               fit: BoxFit.cover,
@@ -59,26 +59,34 @@ class _ArtAppState extends State<ArtApp> {
           Column(
             children: [
               Container(
-                margin: EdgeInsets.only(left: 10),
-                padding: EdgeInsets.only(left: 100),
+                margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                 child: Row(
                   children: [
-                    const Text('Silent Color'),
                     Container(
-                      margin: const EdgeInsets.only(left: 10, right: 10),
+                      margin: const EdgeInsets.only(left: 20, right: 20),
+                      child: const Text(
+                        'Silent Color',
+                        style: TextStyle(
+                          fontSize: 25,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                    Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 20),
                       height: 50,
                       width: 50,
                       decoration: BoxDecoration(
                         border: Border.all(
-                          color: const Color.fromARGB(255, 240, 240, 240),
+                          color: Colors.white70,
                         ),
                         borderRadius: BorderRadius.circular(25),
-                        color: const Color.fromARGB(255, 230, 212, 212),
+                        color: Colors.white70,
                       ),
                       child: IconButton(
                         onPressed: () {},
                         icon: const Icon(Icons.favorite_border_outlined),
-                        splashRadius: 25,
+                        splashRadius: 30,
                       ),
                     ),
                     Container(
@@ -87,74 +95,82 @@ class _ArtAppState extends State<ArtApp> {
                       width: 50,
                       decoration: BoxDecoration(
                         border: Border.all(
-                          color: const Color.fromARGB(255, 240, 240, 240),
+                          color: Colors.white70,
                         ),
                         borderRadius: BorderRadius.circular(25),
-                        color: const Color.fromARGB(255, 230, 212, 212),
+                        color: Colors.white70,
                       ),
                       child: IconButton(
                         onPressed: () {},
                         icon: const Icon(Icons.file_upload_outlined),
-                        splashRadius: 25,
+                        splashRadius: 30,
                       ),
                     ),
                   ],
                 ),
               ),
-              Container(
-                width: 200,
-                height: 50,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(30),
-                  color: Colors.white,
-                  boxShadow: const [
-                    BoxShadow(
-                        color: Color.fromARGB(255, 207, 205, 205),
-                        blurRadius: 1,
-                        offset: Offset(0, 1)),
-                  ],
-                ),
-                child: Row(
-                  children: [
-                    Container(
-                      margin: const EdgeInsets.symmetric(
-                          vertical: 5, horizontal: 5),
-                      width: 40,
-                      height: 40,
-                      alignment: Alignment.center,
-                      decoration: const BoxDecoration(
-                        gradient: LinearGradient(
-                          colors: [
-                            Color(0xFFFF9C00),
-                            Color(0xFFFFDB03),
-                          ],
-                        ),
-                        shape: BoxShape.circle,
-                      ),
-                      child: const Text(
-                        "H",
-                        style: TextStyle(
-                          fontSize: 25,
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
+              Row(
+                children: [
+                  Container(
+                    margin: EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+                    width: 200,
+                    height: 50,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(30),
+                      color: Colors.white,
+                      boxShadow: const [
+                        BoxShadow(
+                            color: Color.fromARGB(255, 207, 205, 205),
+                            blurRadius: 1,
+                            offset: Offset(0, 1)),
+                      ],
                     ),
-                    const Text(
-                      '@openart',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 25,
-                      ),
+                    child: Row(
+                      children: [
+                        Container(
+                          margin: const EdgeInsets.symmetric(
+                              vertical: 5, horizontal: 5),
+                          width: 40,
+                          height: 40,
+                          alignment: Alignment.center,
+                          decoration: const BoxDecoration(
+                            gradient: LinearGradient(
+                              colors: [
+                                Color(0xFFFF9C00),
+                                Color(0xFFFFDB03),
+                              ],
+                            ),
+                            shape: BoxShape.circle,
+                          ),
+                          child: const Text(
+                            "H",
+                            style: TextStyle(
+                              fontSize: 25,
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                        const Text(
+                          '@openart',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 25,
+                          ),
+                        ),
+                      ],
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
               Container(
+                margin: EdgeInsets.symmetric(vertical: 10, horizontal: 30),
                 decoration: const BoxDecoration(),
                 child: const Text(
-                    'Together with my design team, we designed this futuristic Cyberyacht concept artwork. We wanted to create something that has not been created yet, so we started to collect ideas of how we imagine the Cyberyacht could look like in the future.'),
-              )
+                  'Together with my design team, we designed this futuristic Cyberyacht concept artwork. We wanted to create something that has not been created yet, so we started to collect ideas of how we imagine the Cyberyacht could look like in the future.',
+                  style: TextStyle(fontSize: 20),
+                ),
+              ),
             ],
           )
         ],
