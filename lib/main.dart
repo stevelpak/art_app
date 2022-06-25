@@ -24,15 +24,12 @@ class ArtApp extends StatefulWidget {
 }
 
 class _ArtAppState extends State<ArtApp> {
-  final Color scaffoldColor = const Color(0xfff8f8f8);
-  final Color textColor1 = const Color(0xff333333);
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: scaffoldColor,
+      backgroundColor: const Color.fromARGB(255, 240, 240, 240),
       appBar: AppBar(
-        backgroundColor: scaffoldColor,
+        backgroundColor: const Color.fromARGB(255, 240, 240, 240),
         elevation: 0,
         title: Image.asset(
           'assets/logo.png',
@@ -41,9 +38,9 @@ class _ArtAppState extends State<ArtApp> {
         actions: [
           IconButton(
             onPressed: () {},
-            icon: Icon(
+            icon: const Icon(
               Icons.menu_outlined,
-              color: textColor1,
+              color: Color.fromARGB(255, 240, 240, 240),
               size: 30,
             ),
           ),
@@ -59,43 +56,107 @@ class _ArtAppState extends State<ArtApp> {
               fit: BoxFit.cover,
             ),
           ),
-          Row(
+          Column(
             children: [
-              const Text('Silent Color'),
               Container(
-                height: 50,
-                width: 50,
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    color: scaffoldColor,
-                  ),
-                  borderRadius: BorderRadius.circular(25),
-                  color: const Color.fromARGB(255, 230, 212, 212),
-                ),
-                child: IconButton(
-                  onPressed: () {},
-                  icon: const Icon(Icons.favorite_border_outlined),
-                  splashRadius: 25,
+                margin: EdgeInsets.only(left: 10),
+                padding: EdgeInsets.only(left: 100),
+                child: Row(
+                  children: [
+                    const Text('Silent Color'),
+                    Container(
+                      margin: const EdgeInsets.only(left: 10, right: 10),
+                      height: 50,
+                      width: 50,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: const Color.fromARGB(255, 240, 240, 240),
+                        ),
+                        borderRadius: BorderRadius.circular(25),
+                        color: const Color.fromARGB(255, 230, 212, 212),
+                      ),
+                      child: IconButton(
+                        onPressed: () {},
+                        icon: const Icon(Icons.favorite_border_outlined),
+                        splashRadius: 25,
+                      ),
+                    ),
+                    Container(
+                      margin: const EdgeInsets.only(right: 10),
+                      height: 50,
+                      width: 50,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: const Color.fromARGB(255, 240, 240, 240),
+                        ),
+                        borderRadius: BorderRadius.circular(25),
+                        color: const Color.fromARGB(255, 230, 212, 212),
+                      ),
+                      child: IconButton(
+                        onPressed: () {},
+                        icon: const Icon(Icons.file_upload_outlined),
+                        splashRadius: 25,
+                      ),
+                    ),
+                  ],
                 ),
               ),
               Container(
+                width: 200,
                 height: 50,
-                width: 50,
                 decoration: BoxDecoration(
-                  border: Border.all(
-                    color: scaffoldColor,
-                  ),
-                  borderRadius: BorderRadius.circular(25),
-                  color: const Color.fromARGB(255, 230, 212, 212),
+                  borderRadius: BorderRadius.circular(30),
+                  color: Colors.white,
+                  boxShadow: const [
+                    BoxShadow(
+                        color: Color.fromARGB(255, 207, 205, 205),
+                        blurRadius: 1,
+                        offset: Offset(0, 1)),
+                  ],
                 ),
-                child: IconButton(
-                  onPressed: () {},
-                  icon: const Icon(Icons.file_upload_outlined),
-                  splashRadius: 25,
+                child: Row(
+                  children: [
+                    Container(
+                      margin: const EdgeInsets.symmetric(
+                          vertical: 5, horizontal: 5),
+                      width: 40,
+                      height: 40,
+                      alignment: Alignment.center,
+                      decoration: const BoxDecoration(
+                        gradient: LinearGradient(
+                          colors: [
+                            Color(0xFFFF9C00),
+                            Color(0xFFFFDB03),
+                          ],
+                        ),
+                        shape: BoxShape.circle,
+                      ),
+                      child: const Text(
+                        "H",
+                        style: TextStyle(
+                          fontSize: 25,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                    const Text(
+                      '@openart',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 25,
+                      ),
+                    ),
+                  ],
                 ),
               ),
+              Container(
+                decoration: const BoxDecoration(),
+                child: const Text(
+                    'Together with my design team, we designed this futuristic Cyberyacht concept artwork. We wanted to create something that has not been created yet, so we started to collect ideas of how we imagine the Cyberyacht could look like in the future.'),
+              )
             ],
-          ),
+          )
         ],
       ),
     );
